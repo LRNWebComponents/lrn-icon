@@ -10,9 +10,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 -->
 <html>
 <head>
-  <title>iron-icon demo</title>
+  <title>lrn-icon demo</title>
   <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
-  <link rel="import" href="../iron-icon.html">
+  <link rel="import" href="../lrn-icon.html">
   <link rel="import" href="../../paper-styles/demo-pages.html" >
 
   <style is="custom-style">
@@ -33,27 +33,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <body>
   <div class="vertical-section-container centered">
     <h4>
-      This demo is for an &lt;iron-icon&gt; with an asynchronously loaded
+      This demo is for an &lt;lrn-icon&gt; with an asynchronously loaded
       iconset.
     </h4>
 
     <div id='loading_message'>Waiting to load iconset...</div>
 
     <div class="vertical-section">
-      <!-- iron-icon using a iron-iconset as its icon source -->
-      <iron-iconset name="example" icons="location" src="location.png" size="24" width="24"></iron-iconset>
+      <!-- lrn-icon using a lrn-iconset as its icon source -->
+      <lrn-iconset name="example" icons="location" src="location.png" size="24" width="24"></lrn-iconset>
 
-      <h4>&lt;iron-icon icon="example:location"&gt;</h4>
-      <iron-icon icon="example:location"></iron-icon>
+      <h4>&lt;lrn-icon icon="example:location"&gt;</h4>
+      <lrn-icon icon="example:location"></lrn-icon>
 
     </div>
   </div>
   <script>
     setTimeout(function() {
-      // Import the code that powers the iron-iconset asynchronously
+      // Import the code that powers the lrn-iconset asynchronously
       var linkElem = document.createElement('link');
       linkElem.setAttribute('rel', 'import');
-      linkElem.setAttribute('href', '../../iron-iconset/iron-iconset.html');
+      linkElem.setAttribute('href', '../../lrn-iconset/lrn-iconset.html');
       document.head.appendChild(linkElem);
       document.querySelector('#loading_message').innerText = "Iconset Loaded.";
     }, 1000);

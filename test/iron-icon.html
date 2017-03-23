@@ -12,7 +12,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <html>
 <head>
 
-  <title>iron-icon</title>
+  <title>lrn-icon</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -20,8 +20,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <script src="../../web-component-tester/browser.js"></script>
   <script src="../../test-fixture/test-fixture-mocha.js"></script>
 
-  <link rel="import" href="../iron-icon.html">
-  <link rel="import" href="../../iron-iconset/iron-iconset.html">
+  <link rel="import" href="../lrn-icon.html">
+  <link rel="import" href="../../lrn-iconset/lrn-iconset.html">
   <link rel="import" href="../../promise-polyfill/promise-polyfill.html">
   <link rel="import" href="../../test-fixture/test-fixture.html">
   <link rel="import" href="icon-holder.html">
@@ -31,48 +31,48 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <test-fixture id="TrivialIcon">
     <template>
-      <iron-icon src="../demo/location.png"></iron-icon>
+      <lrn-icon src="../demo/location.png"></lrn-icon>
     </template>
   </test-fixture>
 
   <test-fixture id="IconFromIconset">
     <template>
-      <iron-iconset name="example" icons="location blank" src="location.png" size="24" width="48"></iron-iconset>
-      <iron-icon icon="example:location"></iron-icon>
+      <lrn-iconset name="example" icons="location blank" src="location.png" size="24" width="48"></lrn-iconset>
+      <lrn-icon icon="example:location"></lrn-icon>
     </template>
   </test-fixture>
 
   <test-fixture id="WithoutAnIconSource">
     <template>
-      <iron-icon icon=""></iron-icon>
-      <iron-icon></iron-icon>
-      <iron-icon src=""></iron-icon>
+      <lrn-icon icon=""></lrn-icon>
+      <lrn-icon></lrn-icon>
+      <lrn-icon src=""></lrn-icon>
     </template>
   </test-fixture>
 
   <test-fixture id="UsingAsyncIconset">
     <template>
-      <iron-icon icon="async:location"></iron-icon>
+      <lrn-icon icon="async:location"></lrn-icon>
     </template>
   </test-fixture>
 
   <test-fixture id="AsyncIconset">
     <template>
-      <iron-iconset name="async" icons="location blank" src="location.png" size="24" width="48"></iron-iconset>
+      <lrn-iconset name="async" icons="location blank" src="location.png" size="24" width="48"></lrn-iconset>
     </template>
   </test-fixture>
 
   <test-fixture id="SrcIconSwitch">
     <template>
-      <iron-iconset name="example" icons="location blank" src="location.png" size="24" width="48"></iron-iconset>
-      <iron-icon></iron-icon>
+      <lrn-iconset name="example" icons="location blank" src="location.png" size="24" width="48"></lrn-iconset>
+      <lrn-icon></lrn-icon>
     </template>
   </test-fixture>
 
   <test-fixture id="ParentForceUpdate">
     <template>
       <icon-holder>
-        <iron-icon></iron-icon>
+        <lrn-icon></lrn-icon>
       </icon-holder>
     </template>
   </test-fixture>
@@ -92,7 +92,7 @@ function hasIcon (node) {
   return /png/.test(node.style.backgroundImage);
 }
 
-suite('<iron-icon>', function() {
+suite('<lrn-icon>', function() {
   suite('basic behavior', function() {
     var icon;
 
@@ -116,7 +116,7 @@ suite('<iron-icon>', function() {
     var icon;
 
     setup(function() {
-      icon = document.createElement('iron-icon');
+      icon = document.createElement('lrn-icon');
     });
 
     teardown(function() {
@@ -164,7 +164,7 @@ suite('<iron-icon>', function() {
 
   suite('when no icon source is provided', function() {
     test('will politely wait for an icon source without throwing', function() {
-      document.createElement('iron-icon');
+      document.createElement('lrn-icon');
       fixture('WithoutAnIconSource');
     });
   })
@@ -174,7 +174,7 @@ suite('<iron-icon>', function() {
       var icon = fixture('UsingAsyncIconset');
       expect(hasIcon(icon)).to.be.false;
       return new Promise(function(resolve, reject) {
-        window.addEventListener('iron-iconset-added', function() {
+        window.addEventListener('lrn-iconset-added', function() {
           if (hasIcon(icon)) {
             resolve();
           } else {

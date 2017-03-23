@@ -1,4 +1,5 @@
 <!--
+This is a fork of https://github.com/PolymerElements/lrn-icon
 @license
 Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
 This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
@@ -14,51 +15,51 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <!--
 
-The `iron-icon` element displays an icon. By default an icon renders as a 24px square.
+The `lrn-icon` element displays an icon. By default an icon renders as a 24px square.
 
 Example using src:
 
-    <iron-icon src="star.png"></iron-icon>
+    <lrn-icon src="star.png"></lrn-icon>
 
 Example setting size to 32px x 32px:
 
-    <iron-icon class="big" src="big_star.png"></iron-icon>
+    <lrn-icon class="big" src="big_star.png"></lrn-icon>
 
     <style is="custom-style">
       .big {
-        --iron-icon-height: 32px;
-        --iron-icon-width: 32px;
+        --lrn-icon-height: 32px;
+        --lrn-icon-width: 32px;
       }
     </style>
 
 The iron elements include several sets of icons.
-To use the default set of icons, import `iron-icons.html` and use the `icon` attribute to specify an icon:
+To use the default set of icons, import `lrn-icons.html` and use the `icon` attribute to specify an icon:
 
-    <link rel="import" href="/components/iron-icons/iron-icons.html">
+    <link rel="import" href="/components/lrn-icons/lrn-icons.html">
 
-    <iron-icon icon="menu"></iron-icon>
+    <lrn-icon icon="menu"></lrn-icon>
 
-To use a different built-in set of icons, import the specific `iron-icons/<iconset>-icons.html`, and
+To use a different built-in set of icons, import the specific `lrn-icons/<iconset>-icons.html`, and
 specify the icon as `<iconset>:<icon>`. For example, to use a communication icon, you would
 use:
 
-    <link rel="import" href="/components/iron-icons/communication-icons.html">
+    <link rel="import" href="/components/lrn-icons/communication-icons.html">
 
-    <iron-icon icon="communication:email"></iron-icon>
+    <lrn-icon icon="communication:email"></lrn-icon>
 
 You can also create custom icon sets of bitmap or SVG icons.
 
 Example of using an icon named `cherry` from a custom iconset with the ID `fruit`:
 
-    <iron-icon icon="fruit:cherry"></iron-icon>
+    <lrn-icon icon="fruit:cherry"></lrn-icon>
 
-See [iron-iconset](iron-iconset) and [iron-iconset-svg](iron-iconset-svg) for more information about
+See [lrn-iconset](lrn-iconset) and [lrn-iconset-svg](lrn-iconset-svg) for more information about
 how to create a custom iconset.
 
-See the [iron-icons demo](iron-icons?view=demo:demo/index.html) to see the icons available
+See the [lrn-icons demo](lrn-icons?view=demo:demo/index.html) to see the icons available
 in the various iconsets.
 
-To load a subset of icons from one of the default `iron-icons` sets, you can
+To load a subset of icons from one of the default `lrn-icons` sets, you can
 use the [poly-icon](https://poly-icon.appspot.com/) tool. It allows you
 to select individual icons, and creates an iconset from them that you can
 use directly in your elements.
@@ -69,20 +70,20 @@ The following custom properties are available for styling:
 
 Custom property | Description | Default
 ----------------|-------------|----------
-`--iron-icon` | Mixin applied to the icon | {}
-`--iron-icon-width` | Width of the icon | `24px`
-`--iron-icon-height` | Height of the icon | `24px`
-`--iron-icon-fill-color` | Fill color of the svg icon | `currentcolor`
-`--iron-icon-stroke-color` | Stroke color of the svg icon | none
+`--lrn-icon` | Mixin applied to the icon | {}
+`--lrn-icon-width` | Width of the icon | `24px`
+`--lrn-icon-height` | Height of the icon | `24px`
+`--lrn-icon-fill-color` | Fill color of the svg icon | `currentcolor`
+`--lrn-icon-stroke-color` | Stroke color of the svg icon | none
 
 @group Iron Elements
-@element iron-icon
+@element lrn-icon
 @demo demo/index.html
 @hero hero.svg
 @homepage polymer.github.io
 -->
 
-<dom-module id="iron-icon">
+<dom-module id="lrn-icon">
   <template>
     <style>
       :host {
@@ -92,12 +93,12 @@ Custom property | Description | Default
 
         vertical-align: middle;
 
-        fill: var(--iron-icon-fill-color, currentcolor);
-        stroke: var(--iron-icon-stroke-color, none);
+        fill: var(--lrn-icon-fill-color, currentcolor);
+        stroke: var(--lrn-icon-stroke-color, none);
 
-        width: var(--iron-icon-width, 24px);
-        height: var(--iron-icon-height, 24px);
-        @apply(--iron-icon);
+        width: var(--lrn-icon-width, 24px);
+        height: var(--lrn-icon-height, 24px);
+        @apply(--lrn-icon);
       }
     </style>
   </template>
@@ -106,7 +107,7 @@ Custom property | Description | Default
 
     Polymer({
 
-      is: 'iron-icon',
+      is: 'lrn-icon',
 
       properties: {
 
@@ -127,7 +128,7 @@ Custom property | Description | Default
         },
 
         /**
-         * If using iron-icon without an iconset, you can set the src to be
+         * If using lrn-icon without an iconset, you can set the src to be
          * the URL of an individual icon image file. Note that this will take
          * precedence over a given icon attribute.
          */
@@ -151,7 +152,7 @@ Custom property | Description | Default
         '_iconChanged(icon, isAttached)'
       ],
 
-      _DEFAULT_ICONSET: 'icons',
+      _DEFAULT_ICONSET: 'lrn-icons',
 
       _iconChanged: function(icon) {
         var parts = (icon || '').split(':');
@@ -183,9 +184,9 @@ Custom property | Description | Default
               this._meta.byKey(this._iconsetName));
             if (this._iconset) {
               this._iconset.applyIcon(this, this._iconName, this.theme);
-              this.unlisten(window, 'iron-iconset-added', '_updateIcon');
+              this.unlisten(window, 'lrn-iconset-added', '_updateIcon');
             } else {
-              this.listen(window, 'iron-iconset-added', '_updateIcon');
+              this.listen(window, 'lrn-iconset-added', '_updateIcon');
             }
           }
         } else {
