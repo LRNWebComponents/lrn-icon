@@ -155,9 +155,8 @@ Custom property | Description | Default
       _DEFAULT_ICONSET: 'lrn-icons',
 
       _iconChanged: function(icon) {
-        var parts = (icon || '').split(':');
-        this._iconName = parts.pop();
-        this._iconsetName = parts.pop() || this._DEFAULT_ICONSET;
+        this._iconName = icon;
+        this._iconsetName = this._DEFAULT_ICONSET;
         this._updateIcon();
       },
 
