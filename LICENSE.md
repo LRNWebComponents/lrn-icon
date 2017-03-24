@@ -1,5 +1,4 @@
 BSD 3-Clause License
-
 iron-icon
 Copyright (c) 2014, WebPaperElements
 All rights reserved.
