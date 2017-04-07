@@ -1,6 +1,6 @@
 [![Build status](https://travis-ci.org/PolymerElements/lrn-icon.svg?branch=master)](https://travis-ci.org/PolymerElements/lrn-icon)
 
-##&lt;lrn-icon&gt;
+## &lt;lrn-icon&gt;
 
 The `lrn-icon` element displays an icon. By default an icon renders as a 24px square.
 
