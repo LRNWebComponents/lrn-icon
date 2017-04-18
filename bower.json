@@ -4,7 +4,9 @@
   "dependencies": {
     "iron-flex-layout": "polymerelements/iron-flex-layout#^1.0.0",
     "iron-meta": "polymerelements/iron-meta#^1.0.0",
-    "polymer": "Polymer/polymer#^1.1.0"
+    "polymer": "Polymer/polymer#^1.1.0",
+    "iron-iconset": "^1.0.5",
+    "lrn-icons": "LRNWebComponents/lrn-icons#^1.0.5"
   },
   "devDependencies": {
     "test-fixture": "polymerelements/test-fixture#^1.0.0",
