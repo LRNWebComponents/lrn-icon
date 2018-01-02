@@ -5,10 +5,10 @@
     "iron-flex-layout": "polymerelements/iron-flex-layout#^1.0.0",
     "iron-meta": "polymerelements/iron-meta#^1.0.0",
     "polymer": "Polymer/polymer#^1.1.0",
-    "iron-iconset": "PolymerElements/iron-iconset#^1.0.5",
+    "iron-iconset": "PolymerElements/iron-iconset#^1.0.5"
   },
   "devDependencies": {
-    "lrn-icons": "LRNWebComponents/lrn-icons#^1.0.5"
+    "lrn-icons": "LRNWebComponents/lrn-icons#^1.0.5",
     "test-fixture": "polymerelements/test-fixture#^1.0.0",
     "promise-polyfill": "polymerlabs/promise-polyfill#^1.0.0",
     "iron-component-page": "polymerelements/iron-component-page#^1.0.0",
